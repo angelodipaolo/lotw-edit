@@ -23,13 +23,13 @@ struct RoomCanvas: View {
     var body: some View {
         Canvas { context, size in
             // Build CHR cache only when room changes
-            if currentRoomId != room.id {
-                DispatchQueue.main.async {
+            let _ = {
+                if currentRoomId != room.id {
                     romData.buildCHRCacheForRoom(room)
                     imageCache.clearCache()
                     currentRoomId = room.id
                 }
-            }
+            }()
             
             // Render room tiles using cached images
             for y in 0..<12 {

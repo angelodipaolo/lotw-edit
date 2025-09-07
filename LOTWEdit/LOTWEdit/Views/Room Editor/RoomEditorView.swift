@@ -16,6 +16,7 @@ struct RoomEditorView: View {
     @State private var selectedPalette: Int = 0
     @State private var isEditMode: Bool = false
     @State private var isPainting: Bool = false
+    @State private var currentRoomId: Int = -1
     
     var body: some View {
         HSplitView {
@@ -61,6 +62,14 @@ struct RoomEditorView: View {
                     if isEditMode {
                         // Tile palette for editing
                         if let room = romData.rooms[safe: roomId] {
+                            // Ensure CHR cache is built for the room
+                            let _ = {
+                                if currentRoomId != roomId {
+                                    romData.buildCHRCacheForRoom(room)
+                                    currentRoomId = roomId
+                                }
+                            }()
+                            
                             TilePaletteView(
                                 romData: romData,
                                 selectedTile: $selectedBrushTile,

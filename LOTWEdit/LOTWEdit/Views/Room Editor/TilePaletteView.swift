@@ -15,6 +15,7 @@ struct TilePaletteView: View {
     
     private let tilesPerRow = 8
     private let tileSize: CGFloat = 32
+    @State private var isCacheBuilt = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -98,6 +99,17 @@ struct TilePaletteView: View {
             .background(Color.secondary.opacity(0.05))
             .cornerRadius(8)
         }
+        .onAppear {
+            // Ensure CHR cache is built when the view appears
+            if !isCacheBuilt {
+                romData.buildCHRCacheForRoom(room)
+                isCacheBuilt = true
+            }
+        }
+        .onChange(of: room.id) { _ in
+            // Rebuild cache if room changes
+            romData.buildCHRCacheForRoom(room)
+        }
     }
 }
 
@@ -110,6 +122,9 @@ struct MetatileThumbnail: View {
     
     var body: some View {
         Canvas { context, size in
+            // Ensure CHR cache is built
+            romData.buildCHRCacheForRoom(room)
+            
             // Get the metatile
             if let metatile = romData.getMetatile(for: room, index: Int(metatileIndex)) {
                 let palette = room.palettes[paletteIndex]
