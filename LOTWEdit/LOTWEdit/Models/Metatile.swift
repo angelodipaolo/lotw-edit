@@ -6,7 +6,7 @@
 //
 
 struct Metatile {
-    let tiles: [UInt8] // 4 CHR tile indices (top-left, top-right, bottom-left, bottom-right)
+    let tiles: [UInt8] // 4 CHR tile indices (top-left, bottom-left, top-right, bottom-right)
     
     init(tiles: [UInt8]) {
         if tiles.count >= 4 {

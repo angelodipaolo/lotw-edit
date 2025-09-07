@@ -117,9 +117,12 @@ struct MetatileThumbnail: View {
                 // Draw the 2x2 CHR tiles
                 let halfSize = size.width / 2
                 
+                // Use correct positions: metatile.tiles is ordered as [TL, BL, TR, BR]
+                let positions = [(0, 0), (0, 1), (1, 0), (1, 1)]  // TL, BL, TR, BR
+                
                 for (index, chrTileId) in metatile.tiles.enumerated() {
-                    let x = index % 2
-                    let y = index / 2
+                    guard index < positions.count else { break }
+                    let (x, y) = positions[index]
                     
                     let rect = CGRect(
                         x: CGFloat(x) * halfSize,

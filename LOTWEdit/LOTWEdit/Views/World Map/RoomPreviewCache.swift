@@ -88,11 +88,11 @@ class RoomPreviewCache: ObservableObject {
                     color = Color(white: brightness)
                 }
                 
-                // Fill the tile rectangle
+                // Fill the tile rectangle (flip y-coordinate for proper NES rendering)
                 context.setFillColor(color.cgColor!)
                 context.fill(CGRect(
                     x: Int(CGFloat(x) * scale),
-                    y: Int(CGFloat(y) * scale),
+                    y: Int(CGFloat(11 - y) * scale),  // Flip y-coordinate: 11 - y for 12 rows (0-11)
                     width: Int(scale),
                     height: Int(scale)
                 ))
