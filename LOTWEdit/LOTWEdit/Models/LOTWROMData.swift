@@ -23,7 +23,7 @@ class LOTWROMData: ObservableObject {
     private var chrCache: [CHRTile] = []
     
     private let roomSize = 1024
-    private let roomCount = 128
+    private let roomCount = 72  // LOTW has 72 rooms (4x18)
     private let headerSize = 16
     
     func loadROM(from url: URL) throws {
@@ -73,20 +73,13 @@ class LOTWROMData: ObservableObject {
         
         rooms.removeAll()
         
-        // Rooms are stored in banks 0-8
-        // Each bank is 8KB (8192 bytes) and contains 8 rooms (1024 bytes each)
-        // Total: 9 banks * 8 rooms = 72 rooms (but LOTW has 128 rooms)
-        // Actually, checking the research: first 9 banks contain level maps
-        
+        // LOTW has 72 rooms (18 rows × 4 columns)
+        // Rooms are stored contiguously after the header
+        // Room data ends at 0x12010, then metatile data begins
         for roomId in 0..<roomCount {
-            // Calculate which bank and offset within that bank
-            let bank = roomId / 8  // 8 rooms per bank
-            let roomInBank = roomId % 8
-            
             // Calculate absolute offset in ROM
-            // Banks start after header + PRG banks
-            let bankOffset = headerSize + (bank * 8192)
-            let roomOffset = bankOffset + (roomInBank * roomSize)
+            // Rooms are stored contiguously after the header
+            let roomOffset = headerSize + (roomId * roomSize)
             
             if let roomData = rom.readBytes(from: roomOffset, count: roomSize) {
                 rooms.append(Room(id: roomId, data: roomData))
@@ -234,11 +227,9 @@ class LOTWROMData: ObservableObject {
     private func saveRoom(_ room: Room) {
         guard let rom = rom else { return }
         
-        // Calculate room offset
-        let bank = room.id / 8
-        let roomInBank = room.id % 8
-        let bankOffset = headerSize + (bank * 8192)
-        let roomOffset = bankOffset + (roomInBank * roomSize)
+        // Calculate room offset  
+        // Rooms are stored contiguously after the header
+        let roomOffset = headerSize + (room.id * roomSize)
         
         // Build room data
         var roomData: [UInt8] = []
