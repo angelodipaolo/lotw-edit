@@ -39,9 +39,14 @@ struct RoomEditorView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
-            .frame(minWidth: 400)
-            
-            // Inspector panel
+            .frame(minWidth: 200)
+            roomInspector
+        }
+    }
+    
+    var roomInspector: some View {
+        // Inspector panel
+        ScrollView {
             VStack(alignment: .leading) {
                 // Header with edit mode toggle
                 HStack {
@@ -129,8 +134,8 @@ struct RoomEditorView: View {
                 
                 Spacer()
             }
-            .frame(width: 300)
             .padding()
         }
+//        .frame(minWidth: 200)
     }
 }
