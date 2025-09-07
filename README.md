@@ -8,13 +8,10 @@ A macOS application for editing [Legacy of the Wizard](https://en.wikipedia.org/
 
 ![Legacy of the Wizard NES screenshot](img/screenshot.png)
 
-- Visual room editor with 128-room world map
+- Visual room editor with 64-room world map
 - Real-time tile editing with paint mode
 - Undo/redo support with keyboard shortcuts
-- Zoom controls (1x-8x) for detailed editing
-- High-performance rendering with image caching
 - Save modified ROMs back to disk
-
 
 ## Requirements
 
