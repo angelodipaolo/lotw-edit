@@ -16,6 +16,8 @@ struct RoomCanvas: View {
     let isEditMode: Bool
     let selectedBrushTile: UInt8
     @Binding var isPainting: Bool
+    let showNESPreview: Bool
+    let nesViewportX: Int
     
     @StateObject private var imageCache = MetatileImageCache()
     @State private var currentRoomId: Int = -1
@@ -80,6 +82,11 @@ struct RoomCanvas: View {
             if zoomLevel >= 2 {
                 drawGridLines(context: context, zoomLevel: zoomLevel)
             }
+            
+            // Draw NES preview overlay if enabled
+            if showNESPreview {
+                drawNESPreviewOverlay(context: context, viewportX: nesViewportX, zoomLevel: zoomLevel)
+            }
         }
         .frame(
             width: 64 * 16 * zoomLevel,
@@ -123,6 +130,59 @@ struct RoomCanvas: View {
             verticalPath.addLine(to: CGPoint(x: CGFloat(x) * 16 * zoomLevel, y: 12 * 16 * zoomLevel))
         }
         context.stroke(verticalPath, with: .color(.gray.opacity(0.2)), lineWidth: 0.5)
+    }
+    
+    private func drawNESPreviewOverlay(context: GraphicsContext, viewportX: Int, zoomLevel: CGFloat) {
+        let viewportWidthInTiles = 16
+        let roomWidthInTiles = 64
+        let roomHeightInTiles = 12
+        
+        // Calculate pixel positions
+        let viewportStartX = CGFloat(viewportX) * 16 * zoomLevel
+        let viewportEndX = CGFloat(viewportX + viewportWidthInTiles) * 16 * zoomLevel
+        let totalWidth = CGFloat(roomWidthInTiles) * 16 * zoomLevel
+        let totalHeight = CGFloat(roomHeightInTiles) * 16 * zoomLevel
+        
+        // Draw semi-transparent overlay for left side (if any)
+        if viewportX > 0 {
+            let leftRect = CGRect(
+                x: 0,
+                y: 0,
+                width: viewportStartX,
+                height: totalHeight
+            )
+            context.fill(
+                Path(leftRect),
+                with: .color(.black.opacity(0.5))
+            )
+        }
+        
+        // Draw semi-transparent overlay for right side (if any)
+        if viewportX + viewportWidthInTiles < roomWidthInTiles {
+            let rightRect = CGRect(
+                x: viewportEndX,
+                y: 0,
+                width: totalWidth - viewportEndX,
+                height: totalHeight
+            )
+            context.fill(
+                Path(rightRect),
+                with: .color(.black.opacity(0.5))
+            )
+        }
+        
+        // Draw viewport border for clarity
+        let viewportRect = CGRect(
+            x: viewportStartX,
+            y: 0,
+            width: CGFloat(viewportWidthInTiles) * 16 * zoomLevel,
+            height: totalHeight
+        )
+        context.stroke(
+            Path(viewportRect),
+            with: .color(.white.opacity(0.3)),
+            lineWidth: 2
+        )
     }
     
     private func handleTap(at location: CGPoint) {
