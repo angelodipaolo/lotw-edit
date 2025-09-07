@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		17BDE0952E6B9D0400CDAEAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17BDE07B2E6B9D0300CDAEAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17BDE0822E6B9D0300CDAEAA;
+			remoteInfo = LOTWEdit;
+		};
+		17BDE09F2E6B9D0400CDAEAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17BDE07B2E6B9D0300CDAEAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17BDE0822E6B9D0300CDAEAA;
+			remoteInfo = LOTWEdit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		17BDE0832E6B9D0300CDAEAA /* LOTWEdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LOTWEdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17BDE0942E6B9D0400CDAEAA /* LOTWEditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LOTWEditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17BDE09E2E6B9D0400CDAEAA /* LOTWEditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LOTWEditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		17BDE0852E6B9D0300CDAEAA /* LOTWEdit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LOTWEdit;
+			sourceTree = "<group>";
+		};
+		17BDE0972E6B9D0400CDAEAA /* LOTWEditTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LOTWEditTests;
+			sourceTree = "<group>";
+		};
+		17BDE0A12E6B9D0400CDAEAA /* LOTWEditUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LOTWEditUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17BDE0802E6B9D0300CDAEAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17BDE0912E6B9D0400CDAEAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17BDE09B2E6B9D0400CDAEAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17BDE07A2E6B9D0300CDAEAA = {
+			isa = PBXGroup;
+			children = (
+				17BDE0852E6B9D0300CDAEAA /* LOTWEdit */,
+				17BDE0972E6B9D0400CDAEAA /* LOTWEditTests */,
+				17BDE0A12E6B9D0400CDAEAA /* LOTWEditUITests */,
+				17BDE0842E6B9D0300CDAEAA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17BDE0842E6B9D0300CDAEAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17BDE0832E6B9D0300CDAEAA /* LOTWEdit.app */,
+				17BDE0942E6B9D0400CDAEAA /* LOTWEditTests.xctest */,
+				17BDE09E2E6B9D0400CDAEAA /* LOTWEditUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17BDE0822E6B9D0300CDAEAA /* LOTWEdit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17BDE0A82E6B9D0400CDAEAA /* Build configuration list for PBXNativeTarget "LOTWEdit" */;
+			buildPhases = (
+				17BDE07F2E6B9D0300CDAEAA /* Sources */,
+				17BDE0802E6B9D0300CDAEAA /* Frameworks */,
+				17BDE0812E6B9D0300CDAEAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				17BDE0852E6B9D0300CDAEAA /* LOTWEdit */,
+			);
+			name = LOTWEdit;
+			packageProductDependencies = (
+			);
+			productName = LOTWEdit;
+			productReference = 17BDE0832E6B9D0300CDAEAA /* LOTWEdit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		17BDE0932E6B9D0400CDAEAA /* LOTWEditTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17BDE0AB2E6B9D0400CDAEAA /* Build configuration list for PBXNativeTarget "LOTWEditTests" */;
+			buildPhases = (
+				17BDE0902E6B9D0400CDAEAA /* Sources */,
+				17BDE0912E6B9D0400CDAEAA /* Frameworks */,
+				17BDE0922E6B9D0400CDAEAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17BDE0962E6B9D0400CDAEAA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				17BDE0972E6B9D0400CDAEAA /* LOTWEditTests */,
+			);
+			name = LOTWEditTests;
+			packageProductDependencies = (
+			);
+			productName = LOTWEditTests;
+			productReference = 17BDE0942E6B9D0400CDAEAA /* LOTWEditTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		17BDE09D2E6B9D0400CDAEAA /* LOTWEditUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17BDE0AE2E6B9D0400CDAEAA /* Build configuration list for PBXNativeTarget "LOTWEditUITests" */;
+			buildPhases = (
+				17BDE09A2E6B9D0400CDAEAA /* Sources */,
+				17BDE09B2E6B9D0400CDAEAA /* Frameworks */,
+				17BDE09C2E6B9D0400CDAEAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17BDE0A02E6B9D0400CDAEAA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				17BDE0A12E6B9D0400CDAEAA /* LOTWEditUITests */,
+			);
+			name = LOTWEditUITests;
+			packageProductDependencies = (
+			);
+			productName = LOTWEditUITests;
+			productReference = 17BDE09E2E6B9D0400CDAEAA /* LOTWEditUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17BDE07B2E6B9D0300CDAEAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					17BDE0822E6B9D0300CDAEAA = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					17BDE0932E6B9D0400CDAEAA = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 17BDE0822E6B9D0300CDAEAA;
+					};
+					17BDE09D2E6B9D0400CDAEAA = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 17BDE0822E6B9D0300CDAEAA;
+					};
+				};
+			};
+			buildConfigurationList = 17BDE07E2E6B9D0300CDAEAA /* Build configuration list for PBXProject "LOTWEdit" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17BDE07A2E6B9D0300CDAEAA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 17BDE0842E6B9D0300CDAEAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17BDE0822E6B9D0300CDAEAA /* LOTWEdit */,
+				17BDE0932E6B9D0400CDAEAA /* LOTWEditTests */,
+				17BDE09D2E6B9D0400CDAEAA /* LOTWEditUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17BDE0812E6B9D0300CDAEAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17BDE0922E6B9D0400CDAEAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17BDE09C2E6B9D0400CDAEAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17BDE07F2E6B9D0300CDAEAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17BDE0902E6B9D0400CDAEAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17BDE09A2E6B9D0400CDAEAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17BDE0962E6B9D0400CDAEAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17BDE0822E6B9D0300CDAEAA /* LOTWEdit */;
+			targetProxy = 17BDE0952E6B9D0400CDAEAA /* PBXContainerItemProxy */;
+		};
+		17BDE0A02E6B9D0400CDAEAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17BDE0822E6B9D0300CDAEAA /* LOTWEdit */;
+			targetProxy = 17BDE09F2E6B9D0400CDAEAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		17BDE0A62E6B9D0400CDAEAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		17BDE0A72E6B9D0400CDAEAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		17BDE0A92E6B9D0400CDAEAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LOTWEdit/LOTWEdit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LOTWEdit/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = angelodipaolo.LOTWEdit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		17BDE0AA2E6B9D0400CDAEAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LOTWEdit/LOTWEdit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LOTWEdit/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = angelodipaolo.LOTWEdit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		17BDE0AC2E6B9D0400CDAEAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = angelodipaolo.LOTWEditTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LOTWEdit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LOTWEdit";
+			};
+			name = Debug;
+		};
+		17BDE0AD2E6B9D0400CDAEAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = angelodipaolo.LOTWEditTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LOTWEdit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LOTWEdit";
+			};
+			name = Release;
+		};
+		17BDE0AF2E6B9D0400CDAEAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = angelodipaolo.LOTWEditUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LOTWEdit;
+			};
+			name = Debug;
+		};
+		17BDE0B02E6B9D0400CDAEAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = angelodipaolo.LOTWEditUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LOTWEdit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17BDE07E2E6B9D0300CDAEAA /* Build configuration list for PBXProject "LOTWEdit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17BDE0A62E6B9D0400CDAEAA /* Debug */,
+				17BDE0A72E6B9D0400CDAEAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17BDE0A82E6B9D0400CDAEAA /* Build configuration list for PBXNativeTarget "LOTWEdit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17BDE0A92E6B9D0400CDAEAA /* Debug */,
+				17BDE0AA2E6B9D0400CDAEAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17BDE0AB2E6B9D0400CDAEAA /* Build configuration list for PBXNativeTarget "LOTWEditTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17BDE0AC2E6B9D0400CDAEAA /* Debug */,
+				17BDE0AD2E6B9D0400CDAEAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17BDE0AE2E6B9D0400CDAEAA /* Build configuration list for PBXNativeTarget "LOTWEditUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17BDE0AF2E6B9D0400CDAEAA /* Debug */,
+				17BDE0B02E6B9D0400CDAEAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17BDE07B2E6B9D0300CDAEAA /* Project object */;
+}
