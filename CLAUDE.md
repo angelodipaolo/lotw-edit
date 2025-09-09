@@ -88,5 +88,5 @@ xcodebuild -project LOTWEdit/LOTWEdit.xcodeproj -scheme LOTWEdit test
 ## Development References
 
 ### Documentation
-- `.notes/research/LOTW_ROM_RESEARCH.md` - Comprehensive ROM format documentation
-- ROM map: https://datacrystal.tcrf.net/wiki/Legacy_of_the_Wizard/ROM_map
+
+- ROM map: ./ROMMAP.MD
