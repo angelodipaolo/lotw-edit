@@ -69,6 +69,11 @@ struct RoomCanvas: View {
                 }
             }
             
+            // Draw object overlays in edit mode
+            if isEditMode {
+                drawObjectOverlays(context: context, zoomLevel: zoomLevel)
+            }
+            
             // Draw grid lines efficiently (only when zoomed)
             if zoomLevel >= 2 {
                 drawGridLines(context: context, zoomLevel: zoomLevel)
@@ -130,6 +135,55 @@ struct RoomCanvas: View {
             verticalPath.addLine(to: CGPoint(x: CGFloat(x) * 16 * zoomLevel, y: 12 * 16 * zoomLevel))
         }
         context.stroke(verticalPath, with: .color(.gray.opacity(0.2)), lineWidth: 0.5)
+    }
+    
+    private func drawObjectOverlays(context: GraphicsContext, zoomLevel: CGFloat) {
+        // Draw semi-transparent overlays for special tiles and secret walls
+        for y in 0..<12 {
+            for x in 0..<64 {
+                let behavior = room.getMetatileBehavior(x: x, y: y)
+                let tileRect = CGRect(
+                    x: CGFloat(x) * 16 * zoomLevel,
+                    y: CGFloat(y) * 16 * zoomLevel,
+                    width: 16 * zoomLevel,
+                    height: 16 * zoomLevel
+                )
+                
+                // Draw behavior overlay for special tiles
+                if behavior != .open && behavior != .solid {
+                    context.fill(Path(tileRect), with: .color(behavior.overlayColor))
+                    
+                    // Draw icon if available and zoom is sufficient
+                    if let icon = behavior.icon, zoomLevel >= 2 {
+                        let fontSize = min(12 * zoomLevel, 24)
+                        let iconPosition = CGPoint(
+                            x: tileRect.midX,
+                            y: tileRect.midY
+                        )
+                        context.draw(
+                            Text(icon)
+                                .font(.system(size: fontSize))
+                                .foregroundColor(.white.opacity(0.8)),
+                            at: iconPosition
+                        )
+                    }
+                }
+                
+                // Highlight secret walls with a special border
+                if room.isSecretTile(x: x, y: y) {
+                    // Draw a dashed border to indicate secret wall
+                    let secretPath = Path(tileRect)
+                    context.stroke(
+                        secretPath,
+                        with: .color(.orange.opacity(0.6)),
+                        style: StrokeStyle(
+                            lineWidth: 2,
+                            dash: [4, 2]
+                        )
+                    )
+                }
+            }
+        }
     }
     
     private func drawNESPreviewOverlay(context: GraphicsContext, viewportX: Int, zoomLevel: CGFloat) {

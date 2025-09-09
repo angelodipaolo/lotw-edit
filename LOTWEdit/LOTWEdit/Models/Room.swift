@@ -92,4 +92,31 @@ struct Room: Identifiable {
         guard x >= 0 && x < 64 && y >= 0 && y < 12 else { return }
         terrain[x * 12 + y] = value  // Column-major indexing to match ROM format
     }
+    
+    // MARK: - Metatile Behavior
+    
+    func getMetatileBehavior(x: Int, y: Int) -> MetatileBehavior {
+        let tile = getTile(x: x, y: y)
+        let metatileIndex = Int(tile & 0x3F)
+        return MetatileBehavior(from: metatileIndex)
+    }
+    
+    // MARK: - Secret Walls
+    
+    var secretWallTileIndex: UInt8 {
+        return UInt8(secretTiles & 0xFF)  // Low byte - which tile appears solid but isn't
+    }
+    
+    var secretWallReplacementTile: UInt8 {
+        return UInt8((secretTiles >> 8) & 0xFF)  // High byte - what it becomes when touched
+    }
+    
+    func isSecretTile(x: Int, y: Int) -> Bool {
+        let tile = getTile(x: x, y: y)
+        let tileIndex = tile & 0x3F
+        return tileIndex == secretWallTileIndex && secretWallTileIndex != 0
+    }
+    
+    // Note: Block replacement tile is at offset $304 but not currently parsed
+    // This would be added as: var blockReplacementTile: UInt8
 }
