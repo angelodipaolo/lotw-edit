@@ -123,6 +123,15 @@ struct RoomEditorView: View {
             }
             roomInspector
         }
+        .onChange(of: selectedRoom) { _, newRoomId in
+            // Build CHR cache when selected room changes
+            if let roomId = newRoomId,
+               roomId < romData.rooms.count {
+                let room = romData.rooms[roomId]
+                romData.buildCHRCacheForRoom(room)
+                currentRoomId = roomId
+            }
+        }
     }
     
     var roomInspector: some View {
@@ -148,14 +157,6 @@ struct RoomEditorView: View {
                     if isEditMode {
                         // Tile palette for editing
                         if let room = romData.rooms[safe: roomId] {
-                            // Ensure CHR cache is built for the room
-                            let _ = {
-                                if currentRoomId != roomId {
-                                    romData.buildCHRCacheForRoom(room)
-                                    currentRoomId = roomId
-                                }
-                            }()
-                            
                             TilePaletteView(
                                 romData: romData,
                                 selectedTile: $selectedBrushTile,

@@ -24,15 +24,6 @@ struct RoomCanvas: View {
     
     var body: some View {
         Canvas { context, size in
-            // Build CHR cache only when room changes
-            let _ = {
-                if currentRoomId != room.id {
-                    romData.buildCHRCacheForRoom(room)
-                    imageCache.clearCache()
-                    currentRoomId = room.id
-                }
-            }()
-            
             // Render room tiles using cached images
             for y in 0..<12 {
                 for x in 0..<64 {
@@ -110,7 +101,16 @@ struct RoomCanvas: View {
         .onAppear {
             // Ensure CHR cache is built when view appears
             romData.buildCHRCacheForRoom(room)
+            imageCache.clearCache()
             currentRoomId = room.id
+        }
+        .onChange(of: room.id) { _, newRoomId in
+            // Build CHR cache when room changes
+            if currentRoomId != newRoomId {
+                romData.buildCHRCacheForRoom(room)
+                imageCache.clearCache()
+                currentRoomId = newRoomId
+            }
         }
     }
     
