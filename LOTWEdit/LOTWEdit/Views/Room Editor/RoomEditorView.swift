@@ -90,7 +90,7 @@ struct RoomEditorView: View {
                             selectedTile: $selectedTile,
                             zoomLevel: zoomLevel,
                             isEditMode: isEditMode,
-                            selectedBrushTile: selectedBrushTile,
+                            selectedBrushTile: $selectedBrushTile,
                             isPainting: $isPainting,
                             showNESPreview: showNESPreview,
                             nesViewportX: nesViewportX

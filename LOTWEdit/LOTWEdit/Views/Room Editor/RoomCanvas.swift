@@ -14,7 +14,7 @@ struct RoomCanvas: View {
     @Binding var selectedTile: Room.TilePosition?
     let zoomLevel: CGFloat
     let isEditMode: Bool
-    let selectedBrushTile: UInt8
+    @Binding var selectedBrushTile: UInt8
     @Binding var isPainting: Bool
     let showNESPreview: Bool
     let nesViewportX: Int
@@ -190,6 +190,8 @@ struct RoomCanvas: View {
         let y = Int(location.y / (16 * zoomLevel))
         if x >= 0 && x < 64 && y >= 0 && y < 12 {
             if isEditMode {
+                // Clear cache to force redraw with new tile
+                imageCache.clearCache()
                 romData.setRoomTile(roomId: room.id, x: x, y: y, tileValue: selectedBrushTile)
             } else {
                 selectedTile = Room.TilePosition(x: x, y: y)
@@ -206,6 +208,8 @@ struct RoomCanvas: View {
         if x >= 0 && x < 64 && y >= 0 && y < 12 {
             if !isPainting {
                 isPainting = true
+                // Clear cache at the start of drag painting
+                imageCache.clearCache()
                 romData.undoManager.beginGrouping(description: "Paint Tiles")
             }
             romData.setRoomTile(roomId: room.id, x: x, y: y, tileValue: selectedBrushTile)
